@@ -1,8 +1,9 @@
 import PostContent from "../../components/posts/post-detail/post-content";
-import { getPostsFiles, getPostData } from "../../../lib/posts-util";
+import PostComments from "../../components/posts/post-detail/post-comments";
 import Head from "next/head";
+import { getPostsFiles, getPostData } from "../../../lib/posts-util";
 
-export default function PostDetailPage({ post }) {
+export default function PostDetailPage({ post, slug }) {
   return (
     <>
       <Head>
@@ -10,6 +11,7 @@ export default function PostDetailPage({ post }) {
         <meta name="description" content={post.excerpt} />
       </Head>
       <PostContent post={post} />
+      <PostComments postSlug={slug} />
     </>
   );
 }
@@ -31,6 +33,7 @@ export function getStaticProps(context) {
   return {
     props: {
       post,
+      slug,
     },
     revalidate: 600,
   };

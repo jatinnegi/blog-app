@@ -4,7 +4,7 @@ export default function Layout(props) {
   return (
     <>
       <MainNavigation />
-      <main>{props.children}</main>
+      <main style={{ paddingTop: "6rem" }}>{props.children}</main>
     </>
   );
 }

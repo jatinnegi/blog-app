@@ -6,6 +6,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;
+  position: fixed;
+  z-index: 10;
 }
 
 .header ul {
@@ -29,6 +31,10 @@
 .header a:active,
 .header a.active {
   color: var(--color-grey-200);
+}
+
+.link {
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
